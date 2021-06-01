@@ -1,0 +1,233 @@
+html {
+    height: 100%;
+    background: -webkit-linear-gradient(0deg, #0a1363, #507fb7, #fafff2);
+    background: -moz-linear-gradient(0deg, #0a1363, #507fb7, #fafff2);
+    background: -o-linear-gradient(0deg, #0a1363, #507fb7, #fafff2);
+    background: linear-gradient(0deg, #0a1363, #507fb7, #fafff2);
+    background-attachment: fixed;
+}
+
+/* Header */
+#navbar-ul {
+    list-style: none;
+    display: flex;
+}
+.navbar-item {
+    margin: .5em 1em;
+}
+.navbar-item a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Blinker', sans-serif;
+}
+.navbar-item a:hover {
+    color: rgb(124, 124, 124);
+}
+
+
+/* Main content */
+.menu { padding: 2.5em 1em .5em; }
+
+/* Title page */
+#title {
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+}
+
+h1 { margin: 0 0 .05em; }
+
+.underline {
+    background-color: #ffcb19;
+    height: .4em;
+    width: 5em;
+    margin: 0 auto;
+}
+
+
+/* Filter buttons (element select HTML) */
+.filter-buttons {
+    text-align: center;
+    margin-top: 1em;
+    position: relative;
+}
+
+.filter-select {
+    font-family: 'Fredoka One', cursive;
+    text-transform: capitalize;
+    text-align: center;
+    padding: .2em .5em;
+    width: 20%;
+    outline: none;
+    border: none;
+    border-radius: .3em;
+    cursor: pointer;
+    position: relative;
+
+    appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+.filter-select:focus {
+    color: #fff;
+    background-color: #507fb7;
+}
+
+.select-icon {
+    position: absolute;
+    top: 18.6%;
+    right: 41%;
+}
+.filter-select:focus ~ .select-icon {
+    color: #fff;
+}
+
+
+/* List of items (teams) */
+#block-items {
+    margin: 2em auto 0;
+    width: 70em;
+    max-width: 100%;
+}
+
+
+/* Single item */
+.menu-item {
+    text-align: center;
+    margin-bottom: 3em;
+    padding: 0 2em;
+    background-color: #fff;
+    border-radius: .35em;
+}
+
+.title-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    margin: 1em 0;
+}
+
+.team-name { font-family: 'Squada One', cursive; }
+
+.trophy-icon { font-family: 'Josefin Sans', sans-serif; }
+
+.team-name, .trophy-icon {
+    margin: 0 2em;
+
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+}
+
+.menu-item:hover .team-name {
+    text-shadow: .03em 0 .1em #31ccd4;
+}
+.menu-item:hover .trophy-icon {
+    text-shadow: .05em -.1em .1em #ffd700;
+}
+
+.image-team {
+    height: 15em;
+    margin: 1em 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.text-item {
+    text-align: left;
+    padding: .5em 1em 1em;
+    border-top: .1em solid #808080;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5em;
+}
+.text-item::first-letter {
+    margin-left: .5em;
+}
+
+
+/* This media query is triggered from the width of tablets */
+@media only screen and (max-width: 767px) {
+    .filter-select { width: 80%; }
+
+    .select-icon { right: 14%; }
+}
+
+@media only screen and (min-width: 768px) {
+    .menu {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #block-items {
+        margin-top: 0;
+        padding: 2.5em 8em .5em;
+    }
+}
+
+@media only screen and (min-width: 921px) {
+    #block-items {
+        margin-top: 2em;
+        padding: 0 0 2.5em;
+
+        display: -moz-grid;
+        display: -ms-grid;
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        -webkit-column-gap: 2em;
+        -moz-column-gap: 2em;
+        column-gap: 1.5em;
+
+        row-gap: 2em;
+    }
+
+    .menu-item {
+        display: -moz-grid;
+        display: -ms-grid;
+        display: grid;
+
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 20% 1fr;
+
+        padding: .5em;
+        margin-bottom: 0;
+    }
+
+    .image-team {
+        grid-row: 1 / span 2;
+        height: 13em;
+        align-self: center;
+        margin: 0;
+        padding-right: 1em;
+
+        -o-object-fit: contain;
+        object-fit: contain;
+    }
+
+    .team-name {
+        margin: 0;
+    }
+
+    .trophy-icon { margin: .1em; }
+
+    .text-item {
+        grid-column: 2 / span 1;
+        padding: .5em .4em 0 .2em;
+        line-height: 1.4em;
+        overflow-y: auto;
+    }
+}
+
+
+
+/* font-family: 'Squada One', cursive; para los nombres de los países
+*  font-family: 'Open Sans', sans-serif; para el texto con los nombres de los jugadores
+*  font-family: 'Fredoka One', cursive; para 'Copa América 2020'
+* font-family: 'Blinker', sans-serif; para los links del navbar
+*/
